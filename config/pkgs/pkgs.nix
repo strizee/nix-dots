@@ -47,7 +47,7 @@
     nemo-with-extensions # file viewer
     nautilus # gnome default file manager
     file-roller # unzip
-    Baobab # analyse disk usage in gnome env
+    baobab # analyse disk usage in gnome env
     loupe # image viewer
 
     mpv
