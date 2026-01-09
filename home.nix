@@ -31,6 +31,8 @@
   ];
 
   programs.zen-browser.enable = true;
+  programs.npm.enable = true;
+  programs.bun.enable = true;
 
   home.sessionVariables = {
     # EDITOR = "emacs";
