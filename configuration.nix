@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -14,10 +19,9 @@
 
   networking.hostName = "nixos"; # Define your hostname.
 
-  #to run localsend
-  nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-59-6.12.62"
-  ];
+  nixpkgs.config = {
+    allowInsecurePredicate = pkg: builtins.elem (lib.getName pkg) [ "broadcom-sta" ];
+  };
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";

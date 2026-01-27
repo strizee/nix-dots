@@ -15,8 +15,9 @@
   home.packages = with pkgs; [
     audacity
     krita
-    youtube-music
-    google-chrome
+    beeper
+    nur.repos.lonerOrz.helium
+    #nur.repos.AusCyber.zen-browser
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -31,8 +32,12 @@
   ];
 
   programs.zen-browser.enable = true;
-  programs.npm.enable = true;
-  programs.bun.enable = true;
+  programs = {
+    npm.enable = true;
+    bun.enable = true;
+    # opencode.enable = true;
+    vscode.enable = true;
+  };
 
   home.sessionVariables = {
     # EDITOR = "emacs";

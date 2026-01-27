@@ -9,15 +9,15 @@
   };
 
   # Auto garbage-collection
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 4d";
-  };
+
+  # nix.gc = {
+  #   automatic = true;
+  #   dates = "weekly";
+  #   options = "--delete-older-than 4d";
+  # };
 
   # Store optimisation
   nix.settings = {
     auto-optimise-store = true;
-    log-lines = 0;
   };
 }

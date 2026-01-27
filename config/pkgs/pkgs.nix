@@ -3,23 +3,24 @@
 {
   programs.firefox.enable = false;
 
-  #Make fish the default shell
-  programs.fish.enable = true;
-  users.defaultUserShell = pkgs.fish;
-
   # Enable running of non-nix apps
   programs.nix-ld.enable = true;
 
-  programs.starship.enable = true;
-  programs.zoxide.enable = true;
-  programs.yazi.enable = true;
+  programs = {
+    starship.enable = true;
+    zoxide.enable = true;
+    yazi.enable = true;
+  };
 
   programs.gpu-screen-recorder.enable = true;
+  programs.localsend.enable = true;
+
+  powerManagement.powertop.enable = true;
 
   environment.systemPackages = with pkgs; [
     wget
     git
-    neovim
+    atuin
     lazygit
     eza
     fzf
@@ -27,17 +28,12 @@
     btop
     fastfetch
     gcc
+
     statix
     nil
-    nh
     nix-search-tv
 
-    powertop # battery
-    gpu-screen-recorder
-
-    zed-editor
     obsidian
-    localsend
     ghostty
 
     nerd-fonts.fira-code
@@ -45,7 +41,6 @@
 
     gnome-tweaks
     evince # document viewer
-    nemo-with-extensions # file viewer
     nautilus # gnome default file manager
     file-roller # unzip
     baobab # analyse disk usage in gnome env
